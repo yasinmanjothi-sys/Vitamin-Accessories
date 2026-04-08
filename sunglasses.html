@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop Vitamin Accessories' sunglasses collections — VEGAS, SIN CITY, and RIOT. Bold statement frames in multiple colourways." />
+    <title>Sunglasses | Vitamin Accessories</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/sunglasses.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+      <div class="nav-brand">
+        <a href="/index.html"><img src="/official-logo.png" alt="VA Logo" class="nav-logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/sunglasses.html" class="magnetic-item active-link">Sunglasses</a></li>
+        <li><a href="/female-jewelry.html" class="magnetic-item">Female Jewelry</a></li>
+        <li><a href="/male-jewelry.html" class="magnetic-item">Male Jewelry</a></li>
+        <li><a href="#unisex" class="magnetic-item">Unisex</a></li>
+        <li><a href="#watches" class="magnetic-item">Watches</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-icon magnetic-item" aria-label="Cart">
+          <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="sg-hero" id="sg-hero">
+      <div class="sg-hero-bg" style="background-image: url('/Product Catalog/Sunglasses/VEGAS/Black .jpg')"></div>
+      <div class="sg-hero-overlay"></div>
+      <div class="sg-hero-content fade-up">
+        <p class="sg-hero-eyebrow">The Collections</p>
+        <h1 class="sg-hero-title">Sunglasses</h1>
+        <p class="sg-hero-sub">Three frames. Endless expressions.</p>
+        <a href="#collections" class="btn-outline">Shop the Collections</a>
+      </div>
+    </section>
+
+    <!-- ═══ COLLECTIONS GRID ═══ -->
+    <section class="sg-collections" id="collections">
+      <div class="sg-collections-header fade-up">
+        <h2 class="section-title">Shop by Collection</h2>
+        <div class="gold-line" style="margin:0;"></div>
+      </div>
+
+      <div class="sg-grid">
+
+        <!-- VEGAS -->
+        <article class="sg-card fade-up" data-collection="vegas" id="card-vegas">
+          <div class="sg-card-img-wrap">
+            <img src="/Product Catalog/Sunglasses/VEGAS/Black .jpg" alt="VEGAS sunglasses" class="sg-card-img" loading="lazy" />
+            <div class="sg-card-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="sg-card-info">
+            <div>
+              <h3 class="sg-card-name">VEGAS</h3>
+              <p class="sg-card-style">Statement Sunglasses</p>
+            </div>
+            <p class="sg-card-price">KSH 5,500</p>
+          </div>
+        </article>
+
+        <!-- SIN CITY -->
+        <article class="sg-card fade-up delay-1" data-collection="sin-city" id="card-sin-city">
+          <div class="sg-card-img-wrap">
+            <img src="/Product Catalog/Sunglasses/SIN CITY /Black .jpg" alt="SIN CITY sunglasses" class="sg-card-img" loading="lazy" />
+            <div class="sg-card-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="sg-card-info">
+            <div>
+              <h3 class="sg-card-name">SIN CITY</h3>
+              <p class="sg-card-style">Statement Sunglasses</p>
+            </div>
+            <p class="sg-card-price">KSH 4,500</p>
+          </div>
+        </article>
+
+        <!-- RIOT -->
+        <article class="sg-card fade-up delay-2" data-collection="riot" id="card-riot">
+          <div class="sg-card-img-wrap">
+            <img src="/Product Catalog/Sunglasses/RIOT/Gold.jpg" alt="RIOT sunglasses" class="sg-card-img" loading="lazy" />
+            <div class="sg-card-overlay">
+              <span>View Collection</span>
+            </div>
+          </div>
+          <div class="sg-card-info">
+            <div>
+              <h3 class="sg-card-name">RIOT</h3>
+              <p class="sg-card-style">Statement Sunglasses</p>
+            </div>
+            <p class="sg-card-price">KSH 5,000</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══ PRODUCT PANEL (expands inline) ═══ -->
+    <section class="sg-panel" id="sg-panel" aria-hidden="true">
+      <div class="sg-panel-inner">
+
+        <!-- Back / Close -->
+        <button class="sg-panel-close" id="sg-panel-close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+          </svg>
+          Back to Collections
+        </button>
+
+        <div class="sg-panel-layout">
+
+          <!-- Left: Image Gallery -->
+          <div class="sg-gallery">
+            <div class="sg-gallery-main">
+              <button class="sg-gallery-nav sg-gallery-prev" id="gallery-prev" aria-label="Previous image">&#8592;</button>
+              <img id="gallery-main-img" src="" alt="" class="sg-gallery-main-img" />
+              <button class="sg-gallery-nav sg-gallery-next" id="gallery-next" aria-label="Next image">&#8594;</button>
+            </div>
+            <div class="sg-gallery-thumbs" id="gallery-thumbs"></div>
+          </div>
+
+          <!-- Right: Product Info -->
+          <div class="sg-panel-info">
+            <p class="sg-panel-eyebrow">Vitamin Accessories</p>
+            <h2 class="sg-panel-name" id="panel-name"></h2>
+            <p class="sg-panel-style">Statement Sunglasses</p>
+            <p class="sg-panel-price" id="panel-price"></p>
+
+            <div class="sg-panel-divider"></div>
+
+            <!-- Colour picker -->
+            <div class="sg-swatches-wrap">
+              <p class="sg-swatches-label">Colour: <span id="active-colour-label"></span></p>
+              <div class="sg-swatches" id="sg-swatches"></div>
+            </div>
+
+            <div class="sg-panel-divider"></div>
+
+            <div class="sg-panel-details">
+              <p>✦ &nbsp;Statement frame style</p>
+              <p>✦ &nbsp;Lightweight, premium finish</p>
+              <p>✦ &nbsp;UV400 lens protection</p>
+              <p>✦ &nbsp;Available in multiple colourways</p>
+            </div>
+
+            <!-- Buy Now -->
+            <a class="sg-buy-btn" id="sg-buy-btn" href="#" target="_blank" rel="noopener">
+              Order via WhatsApp
+            </a>
+
+            <p class="sg-panel-note">Orders fulfilled via WhatsApp. We'll confirm availability and arrange delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid fade-up">
+          <div class="footer-brand">
+            <img src="/official-logo.png" alt="VA Logo" class="footer-logo">
+            <p>Adorning the bold with cinematic luxury.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="/sunglasses.html" class="magnetic-item">Sunglasses</a></li>
+              <li><a href="/female-jewelry.html" class="magnetic-item">Female Jewelry</a></li>
+              <li><a href="/male-jewelry.html" class="magnetic-item">Male Jewelry</a></li>
+              <li><a href="#" class="magnetic-item">Watches</a></li>
+              <li><a href="#" class="magnetic-item">Rings</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>+254 700 000 000</p>
+            <p>hello@vitaminaccessories.com</p>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2024 Vitamin Accessories. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="/src/sunglasses.js"></script>
+    <script src="/src/main.js" type="module"></script>
+  </body>
+</html>

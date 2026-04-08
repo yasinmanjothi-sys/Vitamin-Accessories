@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop Vitamin Accessories' male jewellery collections — rings, bracelets, and necklaces for the modern man." />
+    <title>Male Jewelry | Vitamin Accessories</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/sunglasses.css" />
+    <link rel="stylesheet" href="/src/jewelry.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+      <div class="nav-brand">
+        <a href="/index.html"><img src="/official-logo.png" alt="VA Logo" class="nav-logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/sunglasses.html" class="magnetic-item">Sunglasses</a></li>
+        <li><a href="/female-jewelry.html" class="magnetic-item">Female Jewelry</a></li>
+        <li><a href="/male-jewelry.html" class="magnetic-item active-link">Male Jewelry</a></li>
+        <li><a href="#unisex" class="magnetic-item">Unisex</a></li>
+        <li><a href="#watches" class="magnetic-item">Watches</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-icon magnetic-item" aria-label="Cart">
+          <svg style="color:white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="sg-hero fj-hero">
+      <div class="sg-hero-bg" style="background-image: url('/Product Catalog/male jewelry/Hero.png'); background-position: center center;"></div>
+      <div class="sg-hero-overlay"></div>
+      <div class="sg-hero-content fade-up">
+        <p class="sg-hero-eyebrow">The Collections</p>
+        <h1 class="sg-hero-title">Male<br>Jewellery</h1>
+        <p class="sg-hero-sub">Distinctively bold. Effortlessly refined.</p>
+        <a href="#collections" class="btn-outline">Shop the Collections</a>
+      </div>
+    </section>
+
+    <!-- ═══ FILTERS ═══ -->
+    <section class="fj-filters-bar" id="collections">
+      <div class="fj-filters-inner">
+
+        <!-- View Mode -->
+        <div class="fj-view-tabs">
+          <button class="fj-view-btn active" id="view-collections" data-view="collections">Shop by Collection</button>
+          <button class="fj-view-btn" id="view-category" data-view="category">Shop by Category</button>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="fj-filter-group" id="fj-filter-group">
+          <div class="fj-search-wrap">
+            <svg class="fj-search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input type="text" id="filter-search" placeholder="Search jewelry..." class="fj-search-input" aria-label="Search items">
+          </div>
+
+          <select class="fj-select" id="filter-category" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="necklace">Necklace</option>
+            <option value="ring">Ring</option>
+            <option value="bracelet">Bracelet</option>
+          </select>
+          <select class="fj-select" id="filter-price" aria-label="Filter by price">
+            <option value="all">All Prices</option>
+            <option value="under2000">Under KSH 2,000</option>
+            <option value="2000to2500">KSH 2,000 – 2,500</option>
+            <option value="over2500">Over KSH 2,500</option>
+          </select>
+          <button class="fj-clear" id="fj-clear">Clear Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COLLECTIONS VIEW ═══ -->
+    <section class="fj-section" id="fj-collections-view">
+      <div class="fj-grid" id="fj-collection-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ═══ CATEGORY VIEW ═══ -->
+    <section class="fj-section" id="fj-category-view" style="display:none;">
+      <div class="fj-results-bar">
+        <p id="fj-results-count" class="fj-results-count"></p>
+      </div>
+      <div class="fj-grid fj-product-grid" id="fj-product-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ═══ PRODUCT PANEL ═══ -->
+    <section class="sg-panel" id="sg-panel" aria-hidden="true">
+      <div class="sg-panel-inner">
+        <button class="sg-panel-close" id="sg-panel-close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+          </svg>
+          Back
+        </button>
+
+        <div class="sg-panel-layout">
+          <!-- Gallery -->
+          <div class="sg-gallery">
+            <div class="sg-gallery-main">
+              <button class="sg-gallery-nav sg-gallery-prev" id="gallery-prev" aria-label="Previous">&#8592;</button>
+              <img id="gallery-main-img" src="" alt="" class="sg-gallery-main-img" />
+              <button class="sg-gallery-nav sg-gallery-next" id="gallery-next" aria-label="Next">&#8594;</button>
+            </div>
+            <div class="sg-gallery-thumbs" id="gallery-thumbs"></div>
+          </div>
+
+          <!-- Info -->
+          <div class="sg-panel-info">
+            <p class="sg-panel-eyebrow">Vitamin Accessories</p>
+            <h2 class="sg-panel-name" id="panel-name"></h2>
+            <p class="sg-panel-style" id="panel-style"></p>
+            <p class="sg-panel-price" id="panel-price"></p>
+            <div class="sg-panel-divider"></div>
+
+            <!-- Collection pieces -->
+            <div class="fj-collection-pieces" id="collection-pieces" style="display:none;">
+              <p class="fj-pieces-label">Pieces in this collection</p>
+              <div class="fj-pieces-chips" id="pieces-chips"></div>
+              <div class="sg-panel-divider"></div>
+            </div>
+
+            <div class="sg-panel-details" id="panel-details-list">
+              <p>✦ &nbsp;Premium stainless steel or plated finish</p>
+              <p>✦ &nbsp;Distinctive statement designs</p>
+              <p>✦ &nbsp;Durable daily-wear construction</p>
+              <p>✦ &nbsp;Hypoallergenic materials</p>
+            </div>
+
+            <a class="sg-buy-btn" id="sg-buy-btn" href="#" target="_blank" rel="noopener">
+              Order via WhatsApp
+            </a>
+            <p class="sg-panel-note">Orders fulfilled via WhatsApp. We'll confirm availability and arrange delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid fade-up">
+          <div class="footer-brand">
+            <img src="/official-logo.png" alt="VA Logo" class="footer-logo">
+            <p>Adorning the bold with cinematic luxury.</p>
+          </div>
+          <div class="footer-links">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="/sunglasses.html" class="magnetic-item">Sunglasses</a></li>
+              <li><a href="/female-jewelry.html" class="magnetic-item">Female Jewelry</a></li>
+              <li><a href="/male-jewelry.html" class="magnetic-item">Male Jewelry</a></li>
+              <li><a href="#" class="magnetic-item">Watches</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>+254 700 000 000</p>
+            <p>hello@vitaminaccessories.com</p>
+          </div>
+        </div>
+        <div class="copyright">© 2024 Vitamin Accessories. All Rights Reserved.</div>
+      </div>
+    </footer>
+
+    <script src="/src/male-jewelry.js"></script>
+    <script src="/src/main.js" type="module"></script>
+  </body>
+</html>
