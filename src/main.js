@@ -4,14 +4,14 @@ import './style.css'
 // 1. Full Product Data
 // 1. Featured Highlights (The 8 Perfect Products)
 const products = [
-  { category: 'Sunglasses', name: 'SIN CITY - COFFEE', price: '4,500 KSH', image: '/Product Catalog/Sunglasses/SIN CITY /coffee.jpg', link: 'sunglasses.html' },
-  { category: 'Sunglasses', name: 'VEGAS - SILVER', price: '5,000 KSH', image: '/Product Catalog/Sunglasses/VEGAS/Silver.jpg', link: 'sunglasses.html' },
-  { category: 'Male Jewelry', name: 'CAPTAIN NECKLACE', price: '2,500 KSH', image: '/Product Catalog/male jewelry/CAPTAIN NECKLACE/c2319b882a0f827b691dbfbac231f420.jpg', link: 'male-jewelry.html' },
-  { category: 'Male Jewelry', name: 'KAYA NECKLACE', price: '2,500 KSH', image: '/Product Catalog/male jewelry/KAYA NECKLACE/077e20100a8eff227f9f8f22880031e3.jpg', link: 'male-jewelry.html' },
-  { category: 'Unisex', name: 'ARMORY BRACELET', price: '2,800 KSH', image: '/Product Catalog/unisex jewelry/ARMORY BRACELET/40c57ea409ef08bab18679d5c295413f.jpg', link: 'unisex-jewelry.html' },
-  { category: 'Unisex', name: 'AZIZI CUFF', price: '2,200 KSH', image: '/Product Catalog/unisex jewelry/AZIZI CUFF/decf42d5e3c85cce0d4a3df4f53e4998.jpg', link: 'unisex-jewelry.html' },
-  { category: 'Watches', name: 'MENS DUNE', price: '12,000 KSH', image: '/Product Catalog/watches/MENS DUNE/Silver.jpg', link: 'watches.html' },
-  { category: 'Watches', name: 'WOMENS CODA', price: '9,500 KSH', image: '/Product Catalog/watches/CODA /Gold.jpg', link: 'watches.html' }
+  { category: 'Sunglasses', name: 'SIN CITY - COFFEE', price: '4,500 KSH', image: '/Product Catalog/Sunglasses/SIN CITY /coffee.jpg', link: 'sunglasses.html?open=sin-city' },
+  { category: 'Sunglasses', name: 'VEGAS - SILVER', price: '5,000 KSH', image: '/Product Catalog/Sunglasses/VEGAS/Silver.jpg', link: 'sunglasses.html?open=vegas' },
+  { category: 'Male Jewelry', name: 'CAPTAIN NECKLACE', price: '2,500 KSH', image: '/Product Catalog/male jewelry/CAPTAIN NECKLACE/c2319b882a0f827b691dbfbac231f420.jpg', link: 'male-jewelry.html?open=captain' },
+  { category: 'Male Jewelry', name: 'KAYA NECKLACE', price: '2,500 KSH', image: '/Product Catalog/male jewelry/KAYA NECKLACE/077e20100a8eff227f9f8f22880031e3.jpg', link: 'male-jewelry.html?open=kaya' },
+  { category: 'Unisex', name: 'ARMORY BRACELET', price: '2,800 KSH', image: '/Product Catalog/unisex jewelry/ARMORY BRACELET/40c57ea409ef08bab18679d5c295413f.jpg', link: 'unisex-jewelry.html?open=armory' },
+  { category: 'Unisex', name: 'AZIZI CUFF', price: '2,200 KSH', image: '/Product Catalog/unisex jewelry/AZIZI CUFF/decf42d5e3c85cce0d4a3df4f53e4998.jpg', link: 'unisex-jewelry.html?open=azizi' },
+  { category: 'Watches', name: 'MENS DUNE', price: '12,000 KSH', image: '/Product Catalog/watches/MENS DUNE/Silver.jpg', link: 'watches.html?open=dune' },
+  { category: 'Watches', name: 'WOMENS CODA', price: '9,500 KSH', image: '/Product Catalog/watches/CODA /Gold.jpg', link: 'watches.html?open=coda' }
 ];
 
 // Populate Featured Items

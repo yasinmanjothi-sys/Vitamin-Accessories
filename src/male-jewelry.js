@@ -449,4 +449,15 @@ function observeFadeUps() {
   fadeEls.forEach(el => observer.observe(el));
 }
 
+// Deep Linking Logic
+function handleDeepLink() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const openId = urlParams.get('open');
+  if (openId) {
+    // Small delay to ensure render is complete and panel can animate smoothly
+    setTimeout(() => openCollectionPanel(openId), 500);
+  }
+}
+
 renderCollections();
+handleDeepLink();

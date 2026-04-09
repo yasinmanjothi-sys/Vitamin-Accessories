@@ -273,9 +273,8 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
 });
 
-/* ── Fade-up observer (shared with main.js logic) ───── */
-const fadeEls = document.querySelectorAll('.fade-up');
-if (fadeEls.length) {
+function observeFadeUps() {
+  const fadeEls = document.querySelectorAll('.fade-up:not(.visible)');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -286,3 +285,14 @@ if (fadeEls.length) {
   }, { threshold: 0.15 });
   fadeEls.forEach(el => observer.observe(el));
 }
+
+// Deep Linking Logic
+function handleDeepLink() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const openId = urlParams.get('open');
+  if (openId) {
+    setTimeout(() => openPanel(openId), 500);
+  }
+}
+
+handleDeepLink();
