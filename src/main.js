@@ -4,14 +4,14 @@ import './style.css'
 // 1. Full Product Data
 // 1. Featured Highlights (The 8 Perfect Products)
 const products = [
-  { category: 'Sunglasses', name: 'SIN CITY - COFFEE', price: '4,500 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/0666c6a8188c5545ffdbb03344a7312b.jpg' },
-  { category: 'Sunglasses', name: 'VEGAS - SILVER', price: '5,000 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/87f11d8bcd5becec4d0afa062b032bab.jpg' },
-  { category: 'Necklaces', name: 'PINK JUA NECKLACE', price: '2,500 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/049f6b054b9935c62cd53f4f2e39ff73.jpg' },
-  { category: 'Female Jewelry', name: 'NIA EARRING', price: '2,500 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/8b8e0e0a8aa2b29e9247ebbaf45df467.jpg' },
-  { category: 'Female Jewelry', name: 'MARINI RING', price: '2,000 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/b9e2ef910767094784f69cad26e81786.jpg' },
-  { category: 'Female Jewelry', name: 'AMANI BANGLE SET', price: '2,500 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/e9e2ef910767094784f69cad26e81786.jpg' },
-  { category: 'Watches', name: 'CODA WATCH', price: '10,000 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/2a2380eb8aa2b29e9247ebbaf45df467.jpg' },
-  { category: 'Watches', name: 'DUNE WATCH BROWN', price: '12,000 KSH', image: 'https://lucykinuthia.my.canva.site/vitamin-accessories-product-catalog/_assets/media/9b2473bd4167d76670bb7711f90da5fb.jpg' }
+  { category: 'Sunglasses', name: 'SIN CITY - COFEE', price: '4,500 KSH', image: '/Product Catalog/Sunglasses/SIN CITY /coffee.jpg' },
+  { category: 'Sunglasses', name: 'VEGAS - SILVER', price: '5,000 KSH', image: '/Product Catalog/Sunglasses/VEGAS/Silver.jpg' },
+  { category: 'Male Jewelry', name: 'CAPTAIN NECKLACE', price: '2,500 KSH', image: '/Product Catalog/male jewelry/CAPTAIN NECKLACE/c2319b882a0f827b691dbfbac231f420.jpg' },
+  { category: 'Male Jewelry', name: 'KAYA NECKLACE', price: '2,500 KSH', image: '/Product Catalog/male jewelry/KAYA NECKLACE/077e20100a8eff227f9f8f22880031e3.jpg' },
+  { category: 'Unisex', name: 'ARMORY BRACELET', price: '2,800 KSH', image: '/Product Catalog/unisex jewelry/ARMORY BRACELET/40c57ea409ef08bab18679d5c295413f.jpg' },
+  { category: 'Unisex', name: 'AZIZI CUFF', price: '2,200 KSH', image: '/Product Catalog/unisex jewelry/AZIZI CUFF/decf42d5e3c85cce0d4a3df4f53e4998.jpg' },
+  { category: 'Watches', name: 'MENS DUNE', price: '12,000 KSH', image: '/Product Catalog/watches/MENS DUNE/Silver.jpg' },
+  { category: 'Watches', name: 'WOMENS CODA', price: '9,500 KSH', image: '/Product Catalog/watches/CODA /Gold.jpg' }
 ];
 
 // Populate Featured Items
@@ -31,6 +31,17 @@ if (featuredTrack) {
     `;
     featuredTrack.appendChild(item);
   });
+}
+
+// 2. Hero Slideshow
+const slides = document.querySelectorAll('.hero-slide');
+if (slides.length > 0) {
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 5000);
 }
 
 // 3. Simple Parallax
@@ -65,3 +76,28 @@ setTimeout(() => {
     }
   });
 }, 100);
+// 5. Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const mobileOverlay = document.getElementById('mobile-overlay');
+const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+if (hamburger && mobileNav && mobileOverlay) {
+  const toggleMenu = () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+  };
+
+  hamburger.addEventListener('click', toggleMenu);
+  mobileOverlay.addEventListener('click', toggleMenu);
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileNav.classList.contains('active')) {
+        toggleMenu();
+      }
+    });
+  });
+}

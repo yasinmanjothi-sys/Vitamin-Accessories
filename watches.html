@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Shop Vitamin Accessories' female jewellery collections — rings, earrings, necklaces, bracelets and bangles." />
-    <title>Female Jewelry | Vitamin Accessories</title>
+    <meta name="description" content="Shop Vitamin Accessories' watch collections — premium timepieces with interchangeable straps for men and women." />
+    <title>Watches | Vitamin Accessories</title>
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="stylesheet" href="/src/sunglasses.css" />
     <link rel="stylesheet" href="/src/jewelry.css" />
@@ -18,10 +18,10 @@
       </div>
       <ul class="nav-links">
         <li><a href="/sunglasses.html" class="magnetic-item">Sunglasses</a></li>
-        <li><a href="/female-jewelry.html" class="magnetic-item active-link">Female Jewelry</a></li>
+        <li><a href="/female-jewelry.html" class="magnetic-item">Female Jewelry</a></li>
         <li><a href="/male-jewelry.html" class="magnetic-item">Male Jewelry</a></li>
         <li><a href="/unisex-jewelry.html" class="magnetic-item">Unisex</a></li>
-        <li><a href="/watches.html" class="magnetic-item">Watches</a></li>
+        <li><a href="/watches.html" class="magnetic-item active-link">Watches</a></li>
       </ul>
       <div class="nav-actions">
         <button class="hamburger magnetic-item" id="hamburger-toggle">
@@ -49,12 +49,12 @@
 
     <!-- ═══ HERO ═══ -->
     <section class="sg-hero fj-hero">
-      <div class="sg-hero-bg" style="background-image: url('/Product Catalog/female jewelry/ORISHA EARRING/db5ee1bb65c057823a46d4a1407aad28.jpg')"></div>
+      <div class="sg-hero-bg" style="background-image: url('/Product Catalog/watches/Hero.png'); background-position: center 70%;"></div>
       <div class="sg-hero-overlay"></div>
       <div class="sg-hero-content fade-up">
         <p class="sg-hero-eyebrow">The Collections</p>
-        <h1 class="sg-hero-title">Female<br>Jewellery</h1>
-        <p class="sg-hero-sub">Curated pieces for the modern woman.</p>
+        <h1 class="sg-hero-title">Premium<br>Watches</h1>
+        <p class="sg-hero-sub">Timepieces for the bold and the elegant.</p>
         <a href="#collections" class="btn-outline">Shop the Collections</a>
       </div>
     </section>
@@ -75,23 +75,19 @@
             <svg class="fj-search-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
             </svg>
-            <input type="text" id="filter-search" placeholder="Search jewelry..." class="fj-search-input" aria-label="Search products">
+            <input type="text" id="filter-search" placeholder="Search watches..." class="fj-search-input" aria-label="Search items">
           </div>
 
           <select class="fj-select" id="filter-category" aria-label="Filter by category">
             <option value="all">All Categories</option>
-            <option value="earrings">Earrings</option>
-            <option value="necklace">Necklace</option>
-            <option value="ring">Ring</option>
-            <option value="bracelet">Bracelet</option>
-            <option value="bangle">Bangle</option>
-            <option value="cuff">Cuff</option>
+            <option value="mens watch">Mens Watch</option>
+            <option value="womens watch">Womens Watch</option>
           </select>
           <select class="fj-select" id="filter-price" aria-label="Filter by price">
             <option value="all">All Prices</option>
-            <option value="under2000">Under KSH 2,000</option>
-            <option value="2000to2500">KSH 2,000 – 2,500</option>
-            <option value="over2500">Over KSH 2,500</option>
+            <option value="under10000">Under KSH 10,000</option>
+            <option value="10000to11000">KSH 10,000 – 11,000</option>
+            <option value="over11000">Over KSH 11,000</option>
           </select>
           <button class="fj-clear" id="fj-clear">Clear Filters</button>
         </div>
@@ -144,14 +140,21 @@
             <p class="sg-panel-price" id="panel-price"></p>
             <div class="sg-panel-divider"></div>
 
-            <!-- Colour picker (only shown for multi-colour products) -->
-            <div class="sg-swatches-wrap" id="swatches-wrap" style="display:none;">
-              <p class="sg-swatches-label">Colour: <span id="active-colour-label"></span></p>
+            <!-- Swatches (Metal/Face Color) -->
+            <div id="swatches-wrap" style="display:none;">
+              <p class="fj-pieces-label">Colour: <span id="active-colour-label"></span></p>
               <div class="sg-swatches" id="sg-swatches"></div>
               <div class="sg-panel-divider"></div>
             </div>
 
-            <!-- Collection pieces (shown when opening full collection) -->
+            <!-- Strap Selection (New for Watches) -->
+            <div id="straps-wrap" style="display:none;">
+              <p class="fj-pieces-label">Select Strap: <span id="active-strap-label"></span></p>
+              <div class="sg-straps" id="sg-straps"></div>
+              <div class="sg-panel-divider"></div>
+            </div>
+
+            <!-- Collection pieces -->
             <div class="fj-collection-pieces" id="collection-pieces" style="display:none;">
               <p class="fj-pieces-label">Pieces in this collection</p>
               <div class="fj-pieces-chips" id="pieces-chips"></div>
@@ -159,10 +162,10 @@
             </div>
 
             <div class="sg-panel-details" id="panel-details-list">
-              <p>✦ &nbsp;Premium plated finish</p>
-              <p>✦ &nbsp;Adjustable or fixed sizing</p>
+              <p>✦ &nbsp;Premium stainless steel or plated finish</p>
+              <p>✦ &nbsp;Distinctive statement designs</p>
+              <p>✦ &nbsp;Durable daily-wear construction</p>
               <p>✦ &nbsp;Hypoallergenic materials</p>
-              <p>✦ &nbsp;Handcrafted quality</p>
             </div>
 
             <a class="sg-buy-btn" id="sg-buy-btn" href="#" target="_blank" rel="noopener">
@@ -201,8 +204,7 @@
               <li><a href="/female-jewelry.html" class="magnetic-item">Female Jewelry</a></li>
               <li><a href="/male-jewelry.html" class="magnetic-item">Male Jewelry</a></li>
               <li><a href="/unisex-jewelry.html" class="magnetic-item">Unisex Jewelry</a></li>
-              <li><a href="/watches.html" class="magnetic-item">Watches</a></li>
-              <li><a href="#" class="magnetic-item">Rings</a></li>
+              <li><a href="/watches.html" class="magnetic-item active-link">Watches</a></li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -215,7 +217,7 @@
       </div>
     </footer>
 
-    <script src="/src/female-jewelry.js"></script>
+    <script src="/src/watches.js"></script>
     <script src="/src/main.js" type="module"></script>
   </body>
 </html>
