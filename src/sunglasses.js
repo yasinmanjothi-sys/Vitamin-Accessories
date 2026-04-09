@@ -239,13 +239,17 @@ nextBtn.addEventListener('click', () => {
 
 /* ── WhatsApp link ──────────────────────────────────── */
 function updateBuyLink() {
-  const colour     = activeCollection.colours[activeColourIdx].name;
-  const name       = activeCollection.name;
-  const price      = activeCollection.price;
-  const message    = encodeURIComponent(
-    `Hi! I'd like to order the *${name}* sunglasses in *${colour}* — ${price}. Could you confirm availability and arrange delivery? 🙏`
+  const colour  = activeCollection.colours[activeColourIdx].name;
+  const name    = activeCollection.name;
+  const price   = activeCollection.price;
+  const currentImage = activeCollection.colours[activeColourIdx].images?.[activeImageIdx]
+    || activeCollection.colours[activeColourIdx].images?.[0]
+    || '';
+  const imageUrl = currentImage ? `\n\n🖼️ Product image: ${window.location.origin}${currentImage}` : '';
+  const message = encodeURIComponent(
+    `Hello Vitamin Accessories! I'm interested in purchasing the *${name}* sunglasses in *${colour}* — ${price}.${imageUrl}`
   );
-  buyBtn.href = `https://wa.me/254700000000?text=${message}`;
+  buyBtn.href = `https://wa.me/254794279132?text=${message}`;
 }
 
 /* ── Card click listeners ───────────────────────────── */

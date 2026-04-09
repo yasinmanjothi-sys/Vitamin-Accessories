@@ -426,8 +426,13 @@ function updateBuyLink() {
     currentPrice = activeProduct.colours[activeColourIdx].price;
   }
 
-  const message = encodeURIComponent(`Hi! I'd like to order the *${activeProduct.name}*${colourPart}${strapPart} — ${fmt(currentPrice)}. Could you confirm availability? 🙏`);
-  buyBtn.href = `https://wa.me/254700000000?text=${message}`;
+  const currentImage = activeProduct.colours?.[activeColourIdx]?.img
+    || activeProduct.images?.[activeImageIdx]
+    || activeProduct.images?.[0]
+    || '';
+  const imageUrl = currentImage ? `\n\n🖼️ Product image: ${window.location.origin}${currentImage}` : '';
+  const message = encodeURIComponent(`Hello Vitamin Accessories! I'm interested in purchasing the *${activeProduct.name}*${colourPart}${strapPart} — ${fmt(currentPrice)}.${imageUrl}`);
+  buyBtn.href = `https://wa.me/254794279132?text=${message}`;
 }
 
 function closePanel() {

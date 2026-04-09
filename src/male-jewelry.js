@@ -400,8 +400,13 @@ function renderColourSwatches(piece) {
 function updateBuyLink() {
   if (!activeProduct) return;
   const colourPart = activeProduct.colours ? ` in *${activeProduct.colours[activeColourIdx]?.name}*` : '';
-  const message = encodeURIComponent(`Hi! I'd like to order the *${activeProduct.name}*${colourPart} — ${fmt(activeProduct.price)}. Could you confirm availability and arrange delivery? 🙏`);
-  buyBtn.href = `https://wa.me/254700000000?text=${message}`;
+  const currentImage = activeProduct.colours?.[activeColourIdx]?.img
+    || activeProduct.images?.[activeImageIdx]
+    || activeProduct.images?.[0]
+    || '';
+  const imageUrl = currentImage ? `\n\n🖼️ Product image: ${window.location.origin}${currentImage}` : '';
+  const message = encodeURIComponent(`Hello Vitamin Accessories! I'm interested in purchasing the *${activeProduct.name}*${colourPart} — ${fmt(activeProduct.price)}.${imageUrl}`);
+  buyBtn.href = `https://wa.me/254794279132?text=${message}`;
 }
 
 function closePanel() {
