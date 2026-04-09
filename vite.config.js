@@ -12,6 +12,8 @@ export default defineConfig({
         sunglasses:    resolve(__dirname, 'sunglasses.html'),
         femaleJewelry: resolve(__dirname, 'female-jewelry.html'),
         maleJewelry:   resolve(__dirname, 'male-jewelry.html'),
+        unisexJewelry: resolve(__dirname, 'unisex-jewelry.html'),
+        watches:       resolve(__dirname, 'watches.html'),
       },
     },
   },
