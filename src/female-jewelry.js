@@ -714,8 +714,19 @@ function observeFadeUps() {
 function handleDeepLink() {
   const urlParams = new URLSearchParams(window.location.search);
   const openId = urlParams.get('open');
-  if (openId) {
-    setTimeout(() => openCollectionPanel(openId), 500);
+  
+  if (openId && COLLECTIONS.find(c => c.id === openId)) {
+    const triggerOpen = () => {
+      if (typeof openCollectionPanel === 'function') {
+        openCollectionPanel(openId);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      setTimeout(triggerOpen, 100);
+    } else {
+      window.addEventListener('load', triggerOpen);
+    }
   }
 }
 

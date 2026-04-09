@@ -290,8 +290,20 @@ function observeFadeUps() {
 function handleDeepLink() {
   const urlParams = new URLSearchParams(window.location.search);
   const openId = urlParams.get('open');
-  if (openId) {
-    setTimeout(() => openPanel(openId), 500);
+  
+  if (openId && COLLECTIONS[openId]) {
+    // We use multiple checks to ensure the panel opens even if the page is slow
+    const triggerOpen = () => {
+      if (typeof openPanel === 'function') {
+        openPanel(openId);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      setTimeout(triggerOpen, 100);
+    } else {
+      window.addEventListener('load', triggerOpen);
+    }
   }
 }
 
