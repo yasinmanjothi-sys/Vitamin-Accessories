@@ -1,4 +1,8 @@
 import './style.css'
+import { inject } from '@vercel/analytics'
+
+// Initialize Vercel Web Analytics
+inject()
 
 // 1. Product Data from Canva Scrape
 // 1. Full Product Data
